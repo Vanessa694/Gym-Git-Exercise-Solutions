@@ -214,3 +214,151 @@ upstream, see 'push.autoSetupRemote' in 'git help config'.
 
 gymuruhimbiii@uruhimbis-iMac exercise1.1 % 
 '''bash
+### exercise 2
+'''bash
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git push
+Everything up-to-date
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        home.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        home.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stash list
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git add home.html
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stash
+Saved working directory and index state WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stash list
+stash@{0}: WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git add home.html
+fatal: pathspec 'home.html' did not match any files
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git add about.html
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stash
+Saved working directory and index state WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stash list
+stash@{0}: WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+stash@{1}: WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        team.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git add team.html
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stash list
+stash@{0}: WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+stash@{1}: WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stash 
+Saved working directory and index state WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stash list
+stash@{0}: WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+stash@{1}: WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+stash@{2}: WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stach pop stash@{1}
+git: 'stach' is not a git command. See 'git --help'.
+
+The most similar command is
+        stash
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stash pop stash@{1}
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped stash@{1} (642aeb78aa503068720841872c5b9b248683833d)
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stash list
+stash@{0}: WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+stash@{1}: WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stash pop stash@{1}
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Dropped stash@{1} (9b693fd086c28254b4a54afe6df08ec2ea3f1b31)
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git add --all
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git commit -m "setup home and about page"
+[main b4741c2] setup home and about page
+ 2 files changed, 18 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 514 bytes | 514.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Vanessa694/Gym-Git-Exercise-Solutions.git
+   cdfc55f..b4741c2  main -> main
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stash list
+stash@{0}: WIP on main: cdfc55f Merge pull request #1 from Vanessa694/dev
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git stash pop stash@{0}
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+Dropped stash@{0} (2f495b4c6f0921245767016ffca02f345bb64e16)
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git reset --hard
+HEAD is now at b4741c2 setup home and about page
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+gymuruhimbiii@uruhimbis-iMac exercise1.1 % 
